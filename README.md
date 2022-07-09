@@ -5,18 +5,22 @@ Script written in Python3 which dumps the user/group from the Google Workspace. 
 ![This is an image](gw.jpg)
 
 
-# Install Dependencies: 
-
+#### Install Dependencies: 
+```
 pip3 install google.auth google-auth-oauthlib
 
 pip3 install --upgrade google-api-python-client
+```
 
-
-# Usage : 
-
+#### Usage : 
+```
 Usage: Python3 WorkspaceDirectoryDump.py [options] GCPOrgID OauthCredentialFilePath
 
-Example : Python3 WorkspaceDirectoryDump.py -U --oauth-filepath client_secret_xyz-8abcd.apps.googleusercontent.com.json
+User Dump Syntax : Python3 WorkspaceDirectoryDump.py -U --oauth-filepath client_secret_xyz-8abcd.apps.googleusercontent.com.json 
+
+Group Dump Syntax : Python3 WorkspaceDirectoryDump.py -G --oauth-filepath client_secret_xyz-8abcd.apps.googleusercontent.com.json --org-id=ORG_ID
+
+User & Group Dump Syntax : Python3 WorkspaceDirectoryDump.py -U -G --oauth-filepath client_secret_xyz-8abcd.apps.googleusercontent.com.json --org-id=ORG_ID
 
 GCP Access Token Reuse
 
@@ -32,9 +36,9 @@ Options:
   --org-id=ORG_ID       Organization ID
 
   --oauth-filepath=OAUTH_FILEPATH  OAuth Credential File Path
-
+```
   
-# Little Tweaks
+#### Little Tweaks
   
   Organization ID is required only if "Group" data needs to be dumped
   
